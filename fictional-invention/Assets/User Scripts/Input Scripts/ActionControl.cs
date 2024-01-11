@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionControl : MonoBehaviour
-{
-    private InputStrategy input;
-    private string key;
+public class ActionControl {
+    public string key { get; set; }
+    public InputStrategy input { get; set; }
 
-    public void setInput(InputStrategy input)
-    {
-        this.input = input;
+    public ActionControl(string key, InputStrategy input) {
+         this.key = key;
+         this.input = input;
     }
 
-    public string getKey() {
-        return this.key;
+    public bool isActive() {
+        return input.isActive();
     }
 }
