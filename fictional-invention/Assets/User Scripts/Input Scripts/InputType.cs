@@ -1,5 +1,4 @@
-public abstract class InputStrategy
-{
+public abstract class InputType {
     protected bool active = false;
     public abstract void press();
     public abstract void release();

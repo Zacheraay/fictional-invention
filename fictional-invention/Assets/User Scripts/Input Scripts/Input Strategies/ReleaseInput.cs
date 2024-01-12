@@ -1,4 +1,4 @@
-public class ReleaseStrategy : InputStrategy {
+public class ReleaseInput : InputType {
     public override void press() {
         return;
     }

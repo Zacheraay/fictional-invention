@@ -1,13 +1,13 @@
-public class HoldStrategy : InputStrategy {
+public class PressInput : InputType {
     public override void press() {
         this.active = true;
     }
 
     public override void release() {
-        this.active = false;
+        return;
     }
 
     public override bool isActive() {
-        return this.active;
+        return this.setFalse();
     }
 }
