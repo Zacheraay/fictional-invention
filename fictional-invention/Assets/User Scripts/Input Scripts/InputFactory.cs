@@ -1,13 +1,13 @@
 public class InputFactory {
-    public InputType createInputStrategy(string strategy) {
+    public InputStrategy createInput(InputCode strategy) {
         switch(strategy) {
-            case "press":
+            case InputCode.Press:
                 return new PressInput();
-            case "release":
+            case InputCode.Release:
                 return new ReleaseInput();
-            case "hold":
+            case InputCode.Hold:
                 return new HoldInput();
-            case "double tap":
+            case InputCode.DoubleTap:
                 return new DoubleTapInput();
             default:
                 return null;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DoubleTapInput : InputType {
+public class DoubleTapInput : InputStrategy {
     private static float DEFAULT_DOUBLE_TAP_INTERVAL = 0.5f;
     private float next_press = 0f;
     public override void press() {

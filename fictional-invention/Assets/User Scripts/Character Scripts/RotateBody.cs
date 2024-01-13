@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateBody : MonoBehaviour
-{
+public class RotateBody : MonoBehaviour {
     void Update()
     {
         float mouseX = Input.GetAxisRaw("Mouse X");

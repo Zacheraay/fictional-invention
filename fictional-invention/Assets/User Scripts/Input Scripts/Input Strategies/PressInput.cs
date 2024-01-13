@@ -1,4 +1,4 @@
-public class PressInput : InputType {
+public class PressInput : InputStrategy {
     public override void press() {
         this.active = true;
     }

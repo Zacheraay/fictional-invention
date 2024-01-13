@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HoldInput : InputType {
+public class HoldInput : InputStrategy {
     private static float DEFAULT_HOLD_DURATION = 0.5f;
     private float start_of_hold = 0f;
     public override void press() {
@@ -17,8 +17,9 @@ public class HoldInput : InputType {
     }
 
     public bool heldForDuration() {
-        if (!isActive())
+        if (!isActive() || Time.time < start_of_hold + DEFAULT_HOLD_DURATION)
             return false;
-        return Time.time > start_of_hold + DEFAULT_HOLD_DURATION;
+        this.active = false;
+        return true;
     }
 }
