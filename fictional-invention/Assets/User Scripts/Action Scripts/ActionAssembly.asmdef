@@ -2,7 +2,8 @@
     "name": "ActionAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:51d050965e8f9bb47b251d2e73679760"
+        "GUID:51d050965e8f9bb47b251d2e73679760",
+        "GUID:d0455666bbd0ee04a8320a17f656cc90"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

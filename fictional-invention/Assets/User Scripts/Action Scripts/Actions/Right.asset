@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3b5966789e69c438a64d3cce7dd8ce, type: 3}
   m_Name: Right
   m_EditorClassIdentifier: 
-  action_code: 0
+  action_code: 3
   action_type: 1
   key: 100
   DEFAULT_KEY: 100

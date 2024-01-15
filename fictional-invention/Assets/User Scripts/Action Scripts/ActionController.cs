@@ -12,6 +12,10 @@ public class ActionController : MonoBehaviour {
     private List<KeyCode> used_keys = new List<KeyCode>();
     private List<KeyCode> down_keys = new List<KeyCode>();
     private InputFactory input_factory = new InputFactory();
+    private Dictionary<ActionCode, bool> action_requests = new Dictionary<ActionCode, bool>();
+
+    [SerializeField]
+    private Transform f;
 
     private void Start() {
         initializeActions();
@@ -33,10 +37,10 @@ public class ActionController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        foreach(Action action in actions) {
-            if (action.isEnabled())
-                Debug.Log(action.action_code);
-        }
+        foreach(Action action in actions)
+            action_requests[action.action_code] = action.isEnabled();
+
+        f.eulerAngles = Vector3.up * (this.transform.eulerAngles.y + ActionInterpreter.getWishDirection(action_requests) * 180 / 3.14f);
     }
 
     private void initializeActions() {
@@ -44,11 +48,8 @@ public class ActionController : MonoBehaviour {
             InputStrategy input = input_factory.createInput(action.input_type);
             action.setInputStrategy(input);
             used_keys.Add(action.key);
+            action_requests.Add(action.action_code, false);
         }
-    }
-
-    private bool getActionByCode(ActionCode action_code) {
-        return actions.Find(action => action.action_code == action_code).isEnabled();
     }
 
     private List<Action> getActionsByKey(KeyCode key) {
