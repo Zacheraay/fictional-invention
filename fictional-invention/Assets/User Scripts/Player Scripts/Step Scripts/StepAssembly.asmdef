@@ -1,9 +1,7 @@
 {
-    "name": "ActionAssembly",
+    "name": "StepAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:51d050965e8f9bb47b251d2e73679760",
-        "GUID:10fc2d2fc6cee2941bca74fb5e111e0c",
         "GUID:2805a8828fc955140b48a483619c37b3"
     ],
     "includePlatforms": [],
