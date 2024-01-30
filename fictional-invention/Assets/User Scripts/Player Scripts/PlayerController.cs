@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     [SerializeField]
+    private PlayerInfo player;
+    [SerializeField]
     private Transform look;
     [SerializeField]
     private StepController step_controller;
@@ -12,8 +14,9 @@ public class PlayerController : MonoBehaviour {
     private Transform f; // to delete
 
     public void move(Polar wish) {
-        wish.angle += look.eulerAngles.y;
-        f.eulerAngles = wish.magnitude == 0 ? Vector3.back * 90 : Vector3.up * wish.angle; // to delete
+        wish.angle -= look.eulerAngles.y;
+        step_controller.step(wish, player.getCenterMass());
+        f.eulerAngles = wish.magnitude == 0 ? Vector3.back * 90 : Vector3.up * -wish.angle; // to delete
     }
 
     public void rotateBody(float mouse_x, float mouse_y) {
